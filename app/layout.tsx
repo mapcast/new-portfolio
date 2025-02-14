@@ -3,7 +3,10 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "HS Portfolio",
-  description: ""
+  description: "",
+  icons: {
+    icon: './favicon.ico'
+  }
 };
 
 export default function RootLayout({

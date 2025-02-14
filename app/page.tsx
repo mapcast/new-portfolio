@@ -1,41 +1,22 @@
 'use client'
 import { useRef, useState } from "react"
 
-import {HSButton} from 'hs-next-components';
-import {HSHeader} from "chs-components";
-import { HSDevider } from "chs-components";
-import { HSSimpleFrame } from "chs-components";
-import { HSBigButton } from "chs-components";
-import { HSCard } from "chs-components";
-import { HSSimpleTitle } from "chs-components";
-import { HSParagraph } from "chs-components";
-import { HSAccordion } from "chs-components";
-import { getColorTheme } from "@/function/common";
-import { HSIconKeyValue } from "@/components/HSIconKeyValue";
-import { Black_Han_Sans, Do_Hyeon, Gugi } from "next/font/google";
+import {HSHeader, HSDevider, HSSimpleFrame, HSAccordion, HSIconKeyValue} from 'hs-next-components';
+import { Gugi } from "next/font/google";
 
 
 import Profile from "@/sections/Profile";
 import Skill from "@/sections/Skill";
 import Homepage from "@/sections/Homepage";
 import Career from "@/sections/Career";
+import Project from "@/sections/Project";
 
-const dohyeon = Do_Hyeon({
-  subsets: ["latin"], 
-  weight: ["400"],
-});
 const gugi = Gugi({
   subsets: ["latin"], 
   weight: ["400"],
 });
-const bhs = Black_Han_Sans({
-  subsets: ["latin"], 
-  weight: ["400"],
-});
-
 export default function Home() {
   const [theme, setTheme] = useState('seekers');
-  const colorset = getColorTheme(theme ? theme : '');
   const ref = useRef<HTMLDivElement | null>(null);
 
   function scrollToElementById(id: string) {
@@ -72,7 +53,10 @@ export default function Home() {
       <HSDevider size={1} theme={theme}/>
       <Career/>
       <HSDevider size={1} theme={theme}/>
-      <div id="project" style={{width: '100%', padding: '30px 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', columnGap: 50, background: '#FFF'}}>
+      <Project/>
+      <HSDevider size={1} theme={theme}/>
+      {/* 
+      <div style={{width: '100%', padding: '30px 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', columnGap: 50, background: '#FFF'}}>
         <div style={{width: 1230, height: 615, display: 'grid', rowGap: 15, columnGap: 30, gridTemplateRows: '1fr 1fr', gridTemplateColumns: '1fr 1fr'}}>
           <HSSimpleFrame width={600} height={300} theme="monoton">
             <div style={{display: 'grid', gridTemplateColumns: '200px 400px', width: '100%', height: '100%'}}>
@@ -121,6 +105,7 @@ export default function Home() {
         </div>
         
       </div>
+      */}
     </div>
   )
 }

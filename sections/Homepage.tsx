@@ -1,5 +1,4 @@
-import { HSIconKeyValue } from "@/components/HSIconKeyValue";
-import { HSCard, HSParagraph, HSSimpleTitle } from "chs-components";
+import { HSCard, HSParagraph, HSSimpleTitle, HSIconKeyValue } from "hs-next-components";
 import { Do_Hyeon, Gugi } from "next/font/google";
 const dohyeon = Do_Hyeon({
   subsets: ["latin"], 

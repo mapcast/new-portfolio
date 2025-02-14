@@ -1,4 +1,4 @@
-import { HSParagraph, HSSimpleTitle } from "chs-components";
+import { HSParagraph, HSSimpleTitle } from "hs-next-components";
 import { Do_Hyeon } from "next/font/google";
 import profile from '../public/hs5.jpg';
 const dohyeon = Do_Hyeon({
