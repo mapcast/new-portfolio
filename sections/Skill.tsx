@@ -1,4 +1,4 @@
-import { HSSimpleFrame, HSSimpleTitle } from "chs-components";
+import { HSSimpleFrame, HSSimpleTitle } from "hs-next-components";
 import java from "@/public/skill/java.png";
 import js from "@/public/skill/javascript.png";
 import ts from "@/public/skill/typescript.png";

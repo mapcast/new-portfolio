@@ -8,6 +8,53 @@ import htmlcss from "@/public/skill/htmlcss.png";
 import tauri from "@/public/skill/tauri.svg";
 import springboot from "@/public/skill/springboot.png";
 import next from "@/public/skill/next.png";
+import React, { useState } from "react";
+
+const imgDivStyle: React.CSSProperties = {
+  margin: 0,
+  width: '80vw',
+  height: '50vh',
+  lineHeight: '50vh',
+  textAlign: 'center',
+}
+
+const contentStyle: React.CSSProperties = {
+  margin: 0,
+  width: '100%',
+  height: '50vh',
+  color: '#fff',
+  lineHeight: '50vh',
+  textAlign: 'center',
+};
+
+import blog1 from '@/public/projects/blog1.png';
+import blog2 from '@/public/projects/blog2.png';
+import blog3 from '@/public/projects/blog3.png';
+import blog4 from '@/public/projects/blog4.png';
+
+import chain1 from '@/public/projects/chain1.png';
+import chain2 from '@/public/projects/chain2.png';
+
+import connect1 from '@/public/projects/connect1.png';
+import connect2 from '@/public/projects/connect2.png';
+import connect3 from '@/public/projects/connect3.png';
+import connect4 from '@/public/projects/connect4.png';
+import connect5 from '@/public/projects/connect5.png';
+
+import cucumber1 from '@/public/projects/cucumber1.png';
+import cucumber2 from '@/public/projects/cucumber2.png';
+import cucumber3 from '@/public/projects/cucumber3.png';
+
+import depassito1 from '@/public/projects/depassito1.png';
+import depassito2 from '@/public/projects/depassito2.png';
+
+import fs1 from '@/public/projects/fs1.png';
+import fs2 from '@/public/projects/fs2.png';
+import fs3 from '@/public/projects/fs3.png';
+import fs4 from '@/public/projects/fs4.png';
+import fs5 from '@/public/projects/fs5.png';
+import { HSModal } from "@/components/HSModal";
+import { HSCarousel } from "@/components/HSCarousel";
 
 const dohyeon = Do_Hyeon({
   subsets: ["latin"], 
@@ -17,7 +64,9 @@ const gugi = Gugi({
   subsets: ["latin"], 
   weight: ["400"],
 });
+
 export default function Project() {
+  const [activatedModal, setActivatedModal] = useState('none');
   return (
     <div id="project" className={dohyeon.className} style={{width: '100%', background: '#FFF', padding: '20px 0 50px 0'}}>
       <div className={gugi.className} style={{display: 'flex', width: '100%', height: '47px', justifyContent: 'center', alignItems: 'center'}}>
@@ -42,7 +91,6 @@ export default function Project() {
                 <div style={{padding: 20, display: 'flex', gap: 10}}>
                   <HSButton theme="seekers" text="Github" onClick={() => window.open("https://github.com/mapcast/hs-next-components")}/>
                   <HSButton theme="seekers" text="Document" onClick={() => window.open("https://mapcast.github.io/components-showroom/")}/>
-                  <HSButton theme="seekers" text="Images" onClick={() => {}}/>
                 </div>
               </div>
             </HSSimpleFrame>
@@ -67,7 +115,7 @@ export default function Project() {
                 </div>
                 <div style={{padding: 20, display: 'flex', gap: 10}}>
                   <HSButton theme="seekers" text="Github" onClick={() => window.open("https://github.com/mapcast/fs-viewer")}/>
-                  <HSButton theme="seekers" text="Images" onClick={() => {}}/>
+                  <HSButton theme="seekers" text="Images" onClick={() => setActivatedModal('file')}/>
                 </div>
               </div>
             </HSSimpleFrame>
@@ -91,8 +139,8 @@ export default function Project() {
                 <div style={{padding: 20, display: 'flex', gap: 10}}>
                   <HSButton theme="seekers" text="Github(FE)" onClick={() => window.open("https://github.com/mapcast/cucumber")}/>
                   <HSButton theme="seekers" text="Github(BE)" onClick={() => window.open("https://github.com/mapcast/cucumber-rest")}/>
-                  <HSButton theme="seekers" text="Images" onClick={() => {}}/>
-                  <HSButton theme="seekers" text="Site" onClick={() => window.open("https://github.com/mapcast/hs-next-components")}/>
+                  <HSButton theme="seekers" text="Images" onClick={() => setActivatedModal('cucumber')}/>
+                  <HSButton theme="seekers" text="Site" onClick={() => window.open("https://ccb.kr")}/>
                 </div>
               </div>
             </HSSimpleFrame>
@@ -114,7 +162,7 @@ export default function Project() {
                 </div>
                 <div style={{padding: 20, display: 'flex', gap: 10}}>
                   <HSButton theme="seekers" text="Github" onClick={() => window.open("https://github.com/mapcast/depassito")}/>
-                  <HSButton theme="seekers" text="Images" onClick={() => {}}/>
+                  <HSButton theme="seekers" text="Images" onClick={() => setActivatedModal('pass')}/>
                   <HSButton theme="seekers" text="Download" onClick={() => window.open("https://odri0220.tistory.com/10")}/>
                 </div>
               </div>
@@ -137,7 +185,7 @@ export default function Project() {
                 </div>
                 <div style={{padding: 20, display: 'flex', gap: 10}}>
                   <HSButton theme="seekers" text="Github" onClick={() => window.open("https://github.com/mapcast/chain-cho-v1")}/>
-                  <HSButton theme="seekers" text="Images" onClick={() => {}}/>
+                  <HSButton theme="seekers" text="Images" onClick={() => setActivatedModal('chain')}/>
                 </div>
               </div>
             </HSSimpleFrame>
@@ -160,7 +208,7 @@ export default function Project() {
                 </div>
                 <div style={{padding: 20, display: 'flex', gap: 10}}>
                   <HSButton theme="seekers" text="Github" onClick={() => window.open("https://github.com/mapcast/tutorConnector")}/>
-                  <HSButton theme="seekers" text="Images" onClick={() => {}}/>
+                  <HSButton theme="seekers" text="Images" onClick={() => setActivatedModal('tutor')}/>
                 </div>
               </div>
             </HSSimpleFrame>
@@ -184,7 +232,6 @@ export default function Project() {
             <div style={{padding: 20, display: 'flex', gap: 10}}>
               <HSButton theme="seekers" text="Github" onClick={() => window.open("https://github.com/mapcast/hs-next-components")}/>
               <HSButton theme="seekers" text="Document" onClick={() => window.open("https://mapcast.github.io/components-showroom/")}/>
-              <HSButton theme="seekers" text="Images" onClick={() => {}}/>
             </div>
           </div>
         </HSSimpleFrame>
@@ -208,7 +255,7 @@ export default function Project() {
             </div>
             <div style={{padding: 20, display: 'flex', gap: 10}}>
               <HSButton theme="seekers" text="Github" onClick={() => window.open("https://github.com/mapcast/fs-viewer")}/>
-              <HSButton theme="seekers" text="Images" onClick={() => {}}/>
+              <HSButton theme="seekers" text="Images" onClick={() => setActivatedModal('file-m')}/>
             </div>
           </div>
         </HSSimpleFrame>
@@ -231,8 +278,8 @@ export default function Project() {
             <div style={{padding: 20, display: 'flex', gap: 10}}>
               <HSButton theme="seekers" text="Github(FE)" onClick={() => window.open("https://github.com/mapcast/cucumber")}/>
               <HSButton theme="seekers" text="Github(BE)" onClick={() => window.open("https://github.com/mapcast/cucumber-rest")}/>
-              <HSButton theme="seekers" text="Images" onClick={() => {}}/>
-              <HSButton theme="seekers" text="Site" onClick={() => window.open("https://github.com/mapcast/hs-next-components")}/>
+              <HSButton theme="seekers" text="Images" onClick={() => setActivatedModal('cucumber-m')}/>
+              <HSButton theme="seekers" text="Site" onClick={() => window.open("https://ccb.kr/races")}/>
             </div>
           </div>
         </HSSimpleFrame>
@@ -253,7 +300,7 @@ export default function Project() {
             </div>
             <div style={{padding: 20, display: 'flex', gap: 10}}>
               <HSButton theme="seekers" text="Github" onClick={() => window.open("https://github.com/mapcast/depassito")}/>
-              <HSButton theme="seekers" text="Images" onClick={() => {}}/>
+              <HSButton theme="seekers" text="Images" onClick={() => setActivatedModal('pass-m')}/>
               <HSButton theme="seekers" text="Download" onClick={() => window.open("https://odri0220.tistory.com/10")}/>
             </div>
           </div>
@@ -275,7 +322,7 @@ export default function Project() {
             </div>
             <div style={{padding: 20, display: 'flex', gap: 10}}>
               <HSButton theme="seekers" text="Github" onClick={() => window.open("https://github.com/mapcast/chain-cho-v1")}/>
-              <HSButton theme="seekers" text="Images" onClick={() => {}}/>
+              <HSButton theme="seekers" text="Images" onClick={() => setActivatedModal('chain-m')}/>
             </div>
           </div>
         </HSSimpleFrame>
@@ -297,12 +344,81 @@ export default function Project() {
             </div>
             <div style={{padding: 20, display: 'flex', gap: 10}}>
               <HSButton theme="seekers" text="Github" onClick={() => window.open("https://github.com/mapcast/tutorConnector")}/>
-              <HSButton theme="seekers" text="Images" onClick={() => {}}/>
+              <HSButton theme="seekers" text="Images" onClick={() => setActivatedModal('tutor-m')}/>
             </div>
           </div>
         </HSSimpleFrame>
       </div>
-      
+      <HSModal active={activatedModal != 'none'} close={() => setActivatedModal('none')}>
+        <HSCarousel width={1000} height={750} mobileWidth={400} mobileHeight={300} items={
+          activatedModal === 'tutor' ? [
+            <img src={connect1.src} style={{width: 1000}}/>,
+            <img src={connect2.src} style={{width: 1000}}/>,
+            <img src={connect3.src} style={{width: 1000}}/>,
+            <img src={connect4.src} style={{width: 1000}}/>,
+            <img src={connect5.src} style={{width: 1000}}/>
+          ] : 
+          activatedModal === 'file' ? [
+            <img src={fs1.src} style={{width: 800}}/>,
+            <img src={fs2.src} style={{width: 800}}/>,
+            <img src={fs3.src} style={{width: 800}}/>,
+            <img src={fs4.src} style={{width: 800}}/>,
+            <img src={fs5.src} style={{width: 800}}/>
+          ] : 
+          activatedModal === 'chain' ? [
+            <img src={chain1.src} style={{width: 1000}}/>,
+            <img src={chain2.src} style={{width: 1000}}/>,
+          ] : 
+          activatedModal === 'pass' ? [
+            <img src={depassito1.src} style={{width: 1000}}/>,
+            <img src={depassito2.src} style={{width: 1000}}/>,
+          ] : 
+          activatedModal === 'cucumber' ? [
+            <img src={cucumber1.src} style={{width: 1000}}/>,
+            <img src={cucumber2.src} style={{width: 1000}}/>,
+            <img src={cucumber3.src} style={{width: 1000}}/>,
+          ] :
+          activatedModal === 'blog' ? [
+            <img src={blog1.src} style={{width: 1000}}/>,
+            <img src={blog2.src} style={{width: 1000}}/>,
+            <img src={blog3.src} style={{width: 1000}}/>,
+            <img src={blog4.src} style={{width: 1000}}/>,
+          ] : 
+          activatedModal === 'tutor-m' ? [
+            <img src={connect1.src} style={{width: 400}}/>,
+            <img src={connect2.src} style={{width: 400}}/>,
+            <img src={connect3.src} style={{width: 400}}/>,
+            <img src={connect4.src} style={{width: 400}}/>,
+            <img src={connect5.src} style={{width: 400}}/>
+          ] : 
+          activatedModal === 'file-m' ? [
+            <img src={fs1.src} style={{width: 320}}/>,
+            <img src={fs2.src} style={{width: 320}}/>,
+            <img src={fs3.src} style={{width: 320}}/>,
+            <img src={fs4.src} style={{width: 320}}/>,
+            <img src={fs5.src} style={{width: 320}}/>
+          ] : 
+          activatedModal === 'chain-m' ? [
+            <img src={chain1.src} style={{width: 400}}/>,
+            <img src={chain2.src} style={{width: 400}}/>,
+          ] : 
+          activatedModal === 'pass-m' ? [
+            <img src={depassito1.src} style={{width: 400}}/>,
+            <img src={depassito2.src} style={{width: 400}}/>,
+          ] : 
+          activatedModal === 'cucumber-m' ? [
+            <img src={cucumber1.src} style={{width: 400}}/>,
+            <img src={cucumber2.src} style={{width: 400}}/>,
+            <img src={cucumber3.src} style={{width: 400}}/>,
+          ] :
+          activatedModal === 'blog-m' ? [
+            <img src={blog1.src} style={{width: 400}}/>,
+            <img src={blog2.src} style={{width: 400}}/>,
+            <img src={blog3.src} style={{width: 400}}/>,
+            <img src={blog4.src} style={{width: 400}}/>,
+          ] : []
+        }/>
+      </HSModal>
     </div>
   )
 }
